@@ -1,0 +1,64 @@
+2026-01-29 01:37:23,253 - __main__ - INFO - Iniciando proceso de carga de datos...
+2026-01-29 01:37:23,973 - get_information - DEBUG - Carga exitosa de los archivos.
+2026-01-29 01:37:23,973 - __main__ - INFO - Limpiando y transformando datos...
+2026-01-29 01:37:24,400 - transform_data - DEBUG - Limpieza de la tabla PAGOS finalizada
+2026-01-29 01:37:27,126 - transform_data - DEBUG - Limpieza de la tabla EVOLUCION finalizada
+2026-01-29 01:37:27,358 - transform_data - DEBUG - Limpieza de la tabla TELEFONO finalizada
+2026-01-29 01:37:27,358 - __main__ - INFO - Aplicando reglas de negocio...
+2026-01-29 01:37:35,931 - bussiness_rules - DEBUG - Finalización de aplicación de reglas de negocio.
+2026-01-29 01:37:36,006 - __main__ - INFO - Exportando datos procesados...
+2026-01-29 01:37:36,538 - __main__ - INFO - Iniciando entrenamiento del modelo de recaudo...
+2026-01-29 01:37:36,538 - modelo_recaudo - INFO - Cargando datos desde df_evolucion_enriquecida.txt
+2026-01-29 01:37:36,698 - modelo_recaudo - INFO - Se han cargado 65203 registros con 22 características
+2026-01-29 01:37:36,698 - modelo_recaudo - INFO - Analizando el conjunto de datos
+2026-01-29 01:37:36,717 - modelo_recaudo - WARNING - Se encontraron 13910 valores nulos
+2026-01-29 01:37:36,717 - modelo_recaudo - INFO - Imputando valores nulos
+2026-01-29 01:37:37,160 - modelo_recaudo - INFO - Características categóricas: 0
+2026-01-29 01:37:37,161 - modelo_recaudo - INFO - Características numéricas: 21
+2026-01-29 01:37:37,161 - modelo_recaudo - INFO - Variable objetivo sesgada (skew=1.75), aplicando transformación logarítmica
+2026-01-29 01:37:37,162 - modelo_recaudo - INFO - Preparando datos para el entrenamiento
+2026-01-29 01:37:37,176 - modelo_recaudo - INFO - Conjunto de entrenamiento: 52162 muestras
+2026-01-29 01:37:37,176 - modelo_recaudo - INFO - Conjunto de prueba: 13041 muestras
+2026-01-29 01:37:37,176 - modelo_recaudo - INFO - Aplicando preprocesamiento a los datos
+2026-01-29 01:37:37,220 - modelo_recaudo - INFO - Entrenando modelo LightGBM Regressor
+2026-01-29 01:37:39,129 - modelo_recaudo - INFO - Modelo entrenado con 1000 árboles
+2026-01-29 01:37:39,129 - modelo_recaudo - INFO - Evaluando el modelo
+2026-01-29 01:37:39,185 - modelo_recaudo - INFO - MAE (escala original): 22836438.63
+2026-01-29 01:37:39,185 - modelo_recaudo - INFO - RMSE (escala original): 36249696.74
+2026-01-29 01:37:39,185 - modelo_recaudo - INFO - R² (escala original): 0.4781
+2026-01-29 01:37:39,186 - modelo_recaudo - INFO - MAE (escala log): 0.7122
+2026-01-29 01:37:39,186 - modelo_recaudo - INFO - RMSE (escala log): 0.9408
+2026-01-29 01:37:39,187 - modelo_recaudo - INFO - R² (escala log): 0.6870
+2026-01-29 01:37:39,187 - modelo_recaudo - INFO - MAPE: 167.92%
+2026-01-29 01:37:39,473 - modelo_recaudo - INFO - Se han generado visualizaciones de las predicciones
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - Top 20 características más importantes:
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 1. PAGO_MINIMO: 860625.07
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 2. SALDO_CAPITAL_MES: 23411.22
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 3. TELEFONO_2: 17093.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 4. CUENTA: 15463.41
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 5. TELEFONO_1: 14833.96
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 6. SALDO_TOTAL_CLIENTE: 12892.53
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 7. DIAS_MORA: 11769.42
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 8. RANGO_MORA_CLIENTE: 9439.01
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 9. CANTIDAD_PRODUCTOS: 2647.20
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 10. OBLIGACION: 1399.59
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 11. ESTADO_CLIENTE: 300.41
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 12. ESTADO_PAGO: 0.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 13. IDENTIFICACION: 0.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 14. NOMBRE: 0.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 15. COMPANIA: 0.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 16. PRODUCTO: 0.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 17. GRUPO: 0.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 18. ESTADO_ORIGEN: 0.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 19. TIPO_CLIENTE: 0.00
+2026-01-29 01:37:39,474 - modelo_recaudo - INFO - 20. RANGO_DIAS_MORA: 0.00
+2026-01-29 01:37:39,643 - modelo_recaudo - INFO - Se ha generado visualización de importancia de características
+2026-01-29 01:37:39,683 - modelo_recaudo - INFO - Modelo guardado en modelo_recaudo.pkl
+2026-01-29 01:37:39,683 - __main__ - INFO - === Resultados del Modelo de Recaudo ===
+2026-01-29 01:37:39,683 - __main__ - INFO - MAE: 22836438.6268
+2026-01-29 01:37:39,683 - __main__ - INFO - RMSE: 36249696.7430
+2026-01-29 01:37:39,683 - __main__ - INFO - R2: 0.4781
+2026-01-29 01:37:39,684 - __main__ - INFO - MAE_log: 0.7122
+2026-01-29 01:37:39,684 - __main__ - INFO - RMSE_log: 0.9408
+2026-01-29 01:37:39,684 - __main__ - INFO - R2_log: 0.6870
+2026-01-29 01:37:39,684 - __main__ - INFO - Modelo de recaudo entrenado y guardado exitosamente.
