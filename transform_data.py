@@ -10,6 +10,10 @@ logger = logging.getLogger(__name__)
 
 def clean_info(df_pg, df_ev, df_tel):
     """Función para limpieza de los datos en las tablas"""
+
+    df_pg.drop_duplicates()
+    df_ev.drop_duplicates()
+    df_tel.drop_duplicates()
     
     #Estandarizar el nombre de las columnas mayúsculas y rellenar espacios con_
     df_ev.columns = df_ev.columns.str.upper().str.strip().str.replace(' ', '_')

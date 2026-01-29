@@ -17,7 +17,7 @@ def get_data():
         fisrt_route = str(Path.cwd()) + "/data/"
         df_pg = pd.read_csv(fisrt_route + "PAGOS.txt", sep='|',index_col=None, header=0, encoding='ISO-8859-1')
         df_list = [pd.read_csv(fisrt_route + filename, sep='\t', index_col=None, header=0, encoding='ISO-8859-1') for filename in file_list]
-        logger.info("Carga exitosa de los archivos.")
+        logger.debug("Carga exitosa de los archivos.")
         df_ev = df_list[0]
         df_tel = df_list[1]
 

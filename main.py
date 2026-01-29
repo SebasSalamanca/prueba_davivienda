@@ -13,6 +13,7 @@ de responder a la pregunta: ¿Cuanto puede llegar a pagar un cliente? """
 if __name__ == '__main__':
     df1, df2, df3 = get_information.get_data()
     df1, df2, df3 = transform_data.clean_info(df1, df2, df3)
-    bussiness_rules.bussines_rule(df1, df2, df3)
+    df = bussiness_rules.bussines_rule(df1, df2, df3)
+    bussiness_rules.export_data(df)
 
     
