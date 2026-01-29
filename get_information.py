@@ -13,7 +13,6 @@ def get_data():
     """Obtención de información de la carpeta data dónde se alojan los tres archivos, 
     separador diferente en el archivo de pagos."""
     try:
-
         fisrt_route = str(Path.cwd()) + "/data/"
         df_pg = pd.read_csv(fisrt_route + "PAGOS.txt", sep='|',index_col=None, header=0, encoding='ISO-8859-1')
         df_list = [pd.read_csv(fisrt_route + filename, sep='\t', index_col=None, header=0, encoding='ISO-8859-1') for filename in file_list]
