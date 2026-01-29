@@ -8,9 +8,9 @@ import modelo_recaudo
 
 """Descripción del ejercicio: Se realiza la carga de información de las fuentes: 
 EVOLUCIÓN, PAGOS, y TELEFÓNOS con la finalidad de generar un archivo final
-denominado df_evolucion_enriquecida el cual será usado dentro de dos modelos
-1. Modelo de posibilidad de pago 2.Modelo de recaudo. Con el objetivo
-de responder a la pregunta: ¿Cuanto puede llegar a pagar un cliente? """
+denominado df_evolucion_enriquecida el cual será usado dentro del
+Modelo de recaudo. Con el objetivo de responder a la pregunta:
+¿Cuanto puede llegar a pagar un cliente? """
 
 # Configuración del sistema de logging
 settings.log_config()

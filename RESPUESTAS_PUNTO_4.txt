@@ -1,0 +1,16 @@
+Finalmente, de cara al ejercicio:
+    • ¿Qué dificultades o retos encontraron al desarrollarlo?
+    
+    Proceso de ETL: El formato de los archivos y las columnas se requirieron varias transformaciones de limpieza. 
+
+    • ¿Qué inconsistencias o alarmas podrían generar para velar por la calidad y seguridad de la información presentada? 
+    Piense en la creación de controles, ¿cuáles podrían sugerir?:
+
+    Los controles se deseñaron en el código algunos son la eliminación de campos duplicados en tablas, 
+    o en llaves primarias. Eliminación de caracteres inválidos y aplicación de las dimensiones de calidad a los datos.
+
+    • En una escala de 0 a 10, donde 0 es fácil y 10 es muy difícil,  ¿Qué tanto se dificulto realizar el reto? ¿Qué punto considero más complejo? ¿Por qué?
+    
+    Para el tiempo de la prueba y se especifica que se debe usar un modelo de machine learning en este caso para el segundo usé
+    LightGBM Regressor, el cual fue una de las partes más retadoras al igual que el proceso de ETL ya que las fuentes de información 
+    no se encontraban con buena calidad. así que en gran parte por el diseño del modelo daría un 9.
