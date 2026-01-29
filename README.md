@@ -21,7 +21,7 @@ Este proyecto implementa un pipeline completo de ETL (Extract, Transform, Load) 
 ├── modelo_recaudo.py          # Modelo de machine learning con LightGBM
 ├── etl.log                   # Bitácora de ejecución del proceso
 ├── modelo_recaudo.pkl        # Modelo entrenado serializado
-└── RESPUESTAS_PUNTO_4.txt    # ⚠️ **IMPORTANTE: Contiene respuestas a preguntas finales**
+└── RESPUESTAS_PUNTO_4.txt    #**IMPORTANTE: Contiene respuestas a preguntas finales**
 ```
 
 ## 🖼️ Visualizaciones Generadas
@@ -84,7 +84,7 @@ python modelo_recaudo.py
 
 ## ⚠️ Archivo Importante
 
-**`RESPUESTAS_PUNTO_4.txt`** - Este archivo contiene las respuestas detalladas a las preguntas finales del proyecto. **Es fundamental leerlo** para comprender completamente los resultados, limitaciones y recomendaciones del modelo.
+**`RESPUESTAS_PUNTO_4.txt`** - Este archivo contiene las respuestas detalladas a las preguntas finales del proyecto. 
 
 ## 📈 Variables Más Influyentes
 
