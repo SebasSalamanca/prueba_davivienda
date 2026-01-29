@@ -103,6 +103,7 @@ class ModeloRecaudo:
                 if df[col].dtype == 'object':
                     df[col].fillna('DESCONOCIDO', inplace=True)
                 else:
+                    df[col] = pd.to_numeric(df[col], errors='coerce')
                     df[col].fillna(0, inplace=True)
         
         # Verificar si la variable objetivo tiene valores negativos o cero
@@ -416,15 +417,23 @@ class ModeloRecaudo:
         
         # Obtener nombres de características
         feature_names = []
-        for name, _, cols in self.preprocessor.transformers_:
-            if name == 'cat':
-                # Para características categóricas, obtener nombres de OneHotEncoder
-                encoder = self.preprocessor.named_transformers_['cat']
-                cat_features = encoder.get_feature_names_out(cols)
-                feature_names.extend(cat_features)
-            else:
-                # Para características numéricas, usar nombres originales
-                feature_names.extend(cols)
+        if self.preprocessor is not None:
+            for name, _, cols in self.preprocessor.transformers_:
+                if name == 'cat' and len(cols) > 0:
+                    # Para características categóricas, obtener nombres de OneHotEncoder
+                    try:
+                        encoder = self.preprocessor.named_transformers_['cat']
+                        if hasattr(encoder, 'get_feature_names_out'):
+                            cat_features = encoder.get_feature_names_out(cols)
+                            feature_names.extend(cat_features)
+                        else:
+                            feature_names.extend(cols)
+                    except Exception:
+                        # Si hay error con el encoder, usar nombres originales
+                        feature_names.extend(cols)
+                else:
+                    # Para características numéricas, usar nombres originales
+                    feature_names.extend(cols)
         
         # Crear dataframe de importancia
         feature_imp = pd.DataFrame({
