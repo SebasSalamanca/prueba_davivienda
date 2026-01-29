@@ -8,3 +8,8 @@ def log_config():
         filemode = 'w',
         filename = 'etl.log'
     )
+    
+    # Ignorar logs de matplotlib
+    logging.getLogger('matplotlib').setLevel(logging.WARNING)
+    logging.getLogger('matplotlib.font_manager').setLevel(logging.WARNING)
+    logging.getLogger('matplotlib.pyplot').setLevel(logging.WARNING)
